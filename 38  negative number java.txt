@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class stop_loopnum{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    while(true)
+    {
+      System.out.println("Enter the number");
+      int num=sc.nextInt();
+      {
+        if(num<0)
+        {
+          System.out.println("Though you have entered a negative number,the loop stoped");
+          break;
+        }
+        
+      }
+    }
+  }
+}
+                            
+                            
