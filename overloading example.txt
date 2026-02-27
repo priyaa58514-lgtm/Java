@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class OverloadingExample{
+  int add(int x, int y) {
+    return x + y;
+  }
+  int add(int x, int y, int z) {
+    return x + y + z;
+  }
+  double add(double x, double y) {
+    return x + y;
+   }
+  public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  OverloadingExample obj = new OverloadingExample();
+  System.out.println("Enter first integer:");
+  int x = sc.nextInt();
+
+  System.out.println("Enter second integer:");
+  int y = sc.nextInt();
+
+  System.out.println("Enter third integer:");
+  int z = sc.nextInt();
+        
+  System.out.println("Enter first double value:");
+  double d1 = sc.nextDouble();
+
+  System.out.println("Enter second double value:");
+  double d2 = sc.nextDouble();
+  
+  System.out.println("Sum of 2 integers: " + obj.add(x, y));
+  System.out.println("Sum of 3 integers: " + obj.add(x, y, z));
+  System.out.println("Sum of 2 doubles: " + obj.add(d1, d2));
+
+    }
+}
