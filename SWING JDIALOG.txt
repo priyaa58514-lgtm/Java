@@ -1,0 +1,14 @@
+import javax.swing.*;
+public class Mydialog{
+  public static void main(String[] args)
+  {
+    JFrame frame=new JFrame();
+    frame.setSize(300,200);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+    JDialog dialog=new JDialog(frame,"my dialog",true);
+    dialog.setSize(150,100);
+    dialog.setVisible(true);
+  
+  }
+}
