@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int rollNumber;
+    String department;
+
+    Student(String name, int rollNumber, String department) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.department = department;
+    }
+
+    void displayStudentDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Department: " + department);
+    }
+}
+
+class StudentMarks extends Student {
+    int mark1, mark2, mark3;
+    int total;
+    float average;
+    String result;
+
+    StudentMarks(String name, int rollNumber, String department,
+                 int mark1, int mark2, int mark3) {
+        super(name, rollNumber, department);
+        this.mark1 = mark1;
+        this.mark2 = mark2;
+        this.mark3 = mark3;
+    }
+
+    void calculate() {
+        total = mark1 + mark2 + mark3;
+        average = total / 3.0f;
+
+        if (mark1 >= 40 && mark2 >= 40 && mark3 >= 40) {
+            result = "Pass";
+        } else {
+            result = "Fail";
+        }
+    }
+
+    void displayResult() {
+        displayStudentDetails();
+        System.out.println("Mark 1: " + mark1);
+        System.out.println("Mark 2: " + mark2);
+        System.out.println("Mark 3: " + mark3);
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + average);
+        System.out.println("Result: " + result);
+    }
+}
+
+public class StudentDetails {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Name:");
+        String name = sc.nextLine();
+
+        System.out.println("Enter Roll Number:");
+        int rollNumber = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Enter Department:");
+        String department = sc.nextLine();
+
+        System.out.println("Enter Mark 1:");
+        int m1 = sc.nextInt();
+
+        System.out.println("Enter Mark 2:");
+        int m2 = sc.nextInt();
+
+        System.out.println("Enter Mark 3:");
+        int m3 = sc.nextInt();
+
+        StudentMarks s = new StudentMarks(name, rollNumber, department, m1, m2, m3);
+        s.calculate();
+        s.displayResult();
+
+        sc.close();
+    }
+}
