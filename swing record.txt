@@ -1,0 +1,62 @@
+import javax.swing.*;
+
+public class SimpleSwingDemo1 {
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Simple Form");
+        f.setSize(300, 400);
+        f.setLayout(null);
+
+        // Name
+        JLabel l1 = new JLabel("Name:");
+        l1.setBounds(20, 20, 80, 30);
+        f.add(l1);
+
+        JTextField t1 = new JTextField();
+        t1.setBounds(100, 20, 150, 30);
+        f.add(t1);
+
+        // Address
+        JLabel l2 = new JLabel("Address:");
+        l2.setBounds(20, 70, 80, 30);
+        f.add(l2);
+
+        JTextArea ta = new JTextArea();
+        JScrollPane sp = new JScrollPane(ta);
+        sp.setBounds(100, 70, 150, 60);
+        f.add(sp);
+
+        // Course
+        JLabel l3 = new JLabel("Course:");
+        l3.setBounds(20, 150, 80, 30);
+        f.add(l3);
+
+        String items[] = {"Java", "Python", "C"};
+        JList<String> list = new JList<>(items);
+        list.setBounds(100, 150, 150, 60);
+        f.add(list);
+
+        // Gender
+        JLabel l4 = new JLabel("Gender:");
+        l4.setBounds(20, 230, 80, 30);
+        f.add(l4);
+
+        String g[] = {"Male", "Female"};
+        JComboBox<String> cb = new JComboBox<>(g);
+        cb.setBounds(100, 230, 150, 30);
+        f.add(cb);
+
+        // Submit Button
+        JButton b = new JButton("Submit");
+        b.setBounds(100, 280, 100, 30);
+        f.add(b);
+
+        // Very simple action (lambda - short)
+        b.addActionListener(e -> {
+            JOptionPane.showMessageDialog(f, "Form Submitted");
+        });
+
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+}
